@@ -1,0 +1,23 @@
+{
+  "name": "confianceensoi",
+  "version": "1.0.0",
+  "description": "Exercice dans le cadre de la formation Ada Tech School, le but est de créer un mini-serveur de confiance en soi",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CelineBarbe/confianceEnSoi.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CelineBarbe/confianceEnSoi/issues"
+  },
+  "homepage": "https://github.com/CelineBarbe/confianceEnSoi#readme",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "express": "^4.17.1"
+  }
+}
