@@ -6,11 +6,12 @@ const axios = require('axios').default;
 
 app.use(router);
 
-app.get('/', () => {
+app.get('/', (request, response) => {
     axios.get('https://www.affirmations.dev/')  
-    .then(function (response) {
-        if(response.status === 200) {
-            console.log(response.data.affirmation);
+    .then(function (data) {
+        if(data.status === 200) {
+            console.log(data.data.affirmation);
+            response.send(data.data.affirmation);
         } else {
             throw response;
         } 
