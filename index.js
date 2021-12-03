@@ -5,7 +5,8 @@ const router = express.Router();
 const axios = require('axios').default;
 const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
-const customQuotes = require('./quotes.json');
+//const customQuotes = require('./quotes.json');
+const fs = require('fs');
 
 app.use(router);
 
@@ -26,8 +27,12 @@ app.get('/', (request, response) => {
 
 app.post('/', jsonParser, (request, response) => {
     let customQuote = request.body;
-    customQuotes.push(customQuote);
-    console.log(customQuotes);
+    //customQuotes.push(customQuote);
+    console.log(customQuote.affirmation); // la string qu'on veux récupérer
+    fs.appendFile('./quotes.json', `{"affirmation" : "${customQuote.affirmation}"}`, (err) => {
+        if (err) throw err;
+        console.log('affirmation saved!');
+    });
     response.status(201).json({
     message: 'Objet créé !'
     });
